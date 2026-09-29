@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Ajwa</title>
+    <meta
+      name="description"
+      content="A dreamy anniversary website for Ajwa, full of love, memories, and warm animations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="wish-pending">
+    <section class="cupcake-screen" id="cupcakeScreen" aria-labelledby="wishTitle">
+      <div class="wish-content">
+        <p class="wish-eyebrow">A little sweetness, just for you</p>
+        <h2 id="wishTitle">Make a wish, Ajwa.</h2>
+        <p class="wish-subtitle">Something made with love is waiting.</p>
+        <button class="cupcake-button" id="cupcakeButton" type="button" aria-label="Light the cupcake candle" aria-describedby="wishHint">
+          <svg class="cupcake-art" viewBox="0 0 320 340" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="icing" x1="160" y1="106" x2="160" y2="230" gradientUnits="userSpaceOnUse"><stop stop-color="#fff9ed"/><stop offset="1" stop-color="#ffd9e0"/></linearGradient>
+              <linearGradient id="wrapper" x1="90" y1="225" x2="220" y2="310" gradientUnits="userSpaceOnUse"><stop stop-color="#ed79a6"/><stop offset="1" stop-color="#c84c80"/></linearGradient>
+              <radialGradient id="flameGlow"><stop stop-color="#ffe9a8" stop-opacity=".8"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+            </defs>
+            <ellipse cx="160" cy="319" rx="87" ry="10" fill="#b9507e" opacity=".14"/>
+            <g class="candle-flame"><circle cx="160" cy="63" r="42" fill="url(#flameGlow)"/><path d="M160 38C146 54 145 65 152 72C159 79 174 73 172 63C171 55 164 50 160 38Z" fill="#ffb64d"/><path d="M160 53C153 64 155 71 161 72C169 70 165 60 160 53Z" fill="#fff9d5"/></g>
+            <path class="candle-smoke" d="M160 73C142 60 179 48 159 29" stroke="#fff8ee" stroke-width="4" stroke-linecap="round"/>
+            <path d="M160 85V76" stroke="#744253" stroke-width="3" stroke-linecap="round"/>
+            <rect x="151" y="84" width="18" height="66" rx="5" fill="#fff5e7"/>
+            <path d="M152 94L168 103M152 113L168 122M152 132L168 141" stroke="#e478a4" stroke-width="6"/>
+            <path d="M80 220H240L220 296Q160 321 100 296Z" fill="url(#wrapper)"/>
+            <path d="M97 232L111 293M122 235L130 299M148 235L150 303M174 235L171 303M200 235L192 299M224 232L211 293" stroke="#ffb6cd" stroke-width="5" opacity=".65" stroke-linecap="round"/>
+            <path d="M78 218Q73 201 95 188Q83 169 118 154Q114 140 142 129Q158 122 157 108Q187 117 190 140Q214 145 210 164Q240 172 229 190Q251 201 242 217Q233 237 217 225Q199 240 184 228Q166 243 150 229Q131 241 116 226Q95 238 78 218Z" fill="url(#icing)"/>
+            <path d="M121 155Q156 166 194 149M99 186Q157 205 222 181" stroke="#efbacb" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+            <g stroke-width="5" stroke-linecap="round"><path d="M128 178L134 183M189 207L196 203M155 145L160 141" stroke="#e36996"/><path d="M110 208L115 202M181 174L185 180" stroke="#b4a0cf"/><path d="M150 213L157 213M206 191L210 196" stroke="#e9af57"/></g>
+            <path d="M160 263C146 249 134 269 160 283C186 269 174 249 160 263Z" fill="#ffe5ee"/>
+          </svg>
+        </button>
+        <p class="wish-hint" id="wishHint" aria-live="polite">Tap the cupcake to light the candle</p>
+        <div class="wish-steps" aria-hidden="true"><span class="active"></span><span></span></div>
+        <p class="wish-signature">baked with love ♡</p>
+      </div>
+      <div class="wish-confetti" id="wishConfetti" aria-hidden="true"></div>
+    </section>
+
+    <div class="page-shell" inert>
+<div class="bg-orb orb-two"></div>
+<header class="hero">
+        <nav class="topbar container">
+          <div class="brand">ajwa &amp; matthew <span>♡</span></div>
+          <div class="nav-links">
+            <a href="#story">Story</a>
+            <a href="#memories">Memories</a>
+            <a href="#letter">Letter</a>
+            <a href="#promise">Forever ♡</a>
+          </div>
+        </nav>
+
+        <div class="hero-inner container">
+          <div class="hero-copy">
+            <p class="eyebrow">OUR LITTLE LOVE STORY · SINCE 12.31.2025</p>
+            <h1 tabindex="-1" id="typewriter">Life is sweeter<br>with <em>you, Ajwa.</em></h1>
+            <p class="handwritten hero-note">Happy anniversary, my love ♡</p>
+            <p class="subtitle">From our late-night games to all the little laughs in between — you’re my favorite part of every day. Here’s a little corner of the world, made just for you.</p>
+
+            <div class="cta-row">
+              <button id="sparkleBtn" class="primary-btn">A little extra love ♡</button>
+              <a href="#letter" class="secondary-btn">Your love letter ↗</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <span class="stat-number" id="daysSince">0</span>
+                <span>days of us</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">∞</span>
+                <span>reasons I love you</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">1</span>
+                <span>favorite person</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-scrapbook">
+            <span class="scrap-doodle" aria-hidden="true">♡</span>
+            <figure class="hero-print print-back">
+              <img src="img/818552312_3090246237986645_2867087890981414556_n.jpg" alt="Our Roblox avatars standing side by side in matching black outfits" width="1080" height="486">
+              <figcaption>my favorite teammate</figcaption>
+            </figure>
+            <figure class="hero-print print-front">
+              <img src="img/818296710_1039917625670256_7853506601856451287_n.jpg" alt="Our Roblox avatars in matching pink and white outfits" width="1080" height="486">
+              <figcaption>you + me, in every little world ♡</figcaption>
+            </figure>
+            <span class="scrap-label">the sweetest kind of us</span>
+          </div>
+        </div>
+        <div class="hero-bottom"><span>Made with love. Sprinkled with memories.</span><a href="#memories" aria-label="Explore our memories">↓</a></div>
+      </header>
+
+      <main>
+        <section class="memories section" id="memories">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">01 / THE SCRAPBOOK</p>
+              <h2>Little moments. <em>Big feelings.</em></h2>
+              <p class="section-note">Our favorite little worlds, saved forever. Tap a photo to take a closer look.</p>
+            </div>
+
+            <div class="memory-grid">
+              <article class="memory-card">
+                <button class="memory-photo" type="button" aria-label="View memory: The little laughs"><img src="img/818713701_989518967495480_6240912151705662410_n.jpg" alt="A smiling white-haired Roblox avatar in a colorful game world" width="1080" height="486" loading="lazy"><span aria-hidden="true">↗</span></button>
+                <div class="memory-copy">
+                  <h3>The little laughs</h3>
+                  <p>The day everything changed, even when it felt like just another ordinary moment.</p>
+                </div>
+              </article>
+
+              <article class="memory-card">
+                <button class="memory-photo" type="button" aria-label="View memory: My favorite teammate"><img src="img/818552312_3090246237986645_2867087890981414556_n.jpg" alt="Our Roblox avatars standing together in matching black outfits" width="1080" height="486" loading="lazy"><span aria-hidden="true">↗</span></button>
+                <div class="memory-copy">
+                  <h3>My favorite teammate</h3>
+                  <p>All the laughing, the chaos, and the little moments that somehow became my favorite memories.</p>
+                </div>
+              </article>
+
+              <article class="memory-card">
+                <button class="memory-photo" type="button" aria-label="View memory: Matching with you"><img src="img/818296710_1039917625670256_7853506601856451287_n.jpg" alt="Our Roblox avatars wearing matching pink and white outfits" width="1080" height="486" loading="lazy"><span aria-hidden="true">↗</span></button>
+                <div class="memory-copy">
+                  <h3>Matching with you</h3>
+                  <p>Still the same warmth, still the same comfort, still the best place in the world to be.</p>
+                </div>
+              </article>
+
+              <article class="memory-card">
+                <button class="memory-photo" type="button" aria-label="View memory: Always close to you"><img src="img/818122525_1393639216303179_3923916816294594987_n.jpg" alt="Our black-haired Roblox avatars leaning close together" width="1080" height="486" loading="lazy"><span aria-hidden="true">↗</span></button>
+                <div class="memory-copy">
+                  <h3>Always close to you</h3>
+                  <p>The kind of moments that feel easy, silly, and somehow unforgettable.</p>
+                </div>
+              </article>
+
+              <article class="memory-card">
+                <button class="memory-photo" type="button" aria-label="View memory: Our little adventures"><img src="img/818043290_2153451598936634_3564932296606815348_n.jpg" alt="Our white-haired Roblox avatars together in a colorful game world" width="1080" height="486" loading="lazy"><span aria-hidden="true">↗</span></button>
+                <div class="memory-copy">
+                  <h3>Our little adventures</h3>
+                  <p>When life slows down and everything feels better because you’re there.</p>
+                </div>
+              </article>
+
+              <article class="memory-card">
+                <button class="memory-photo" type="button" aria-label="View memory: Us, in every world"><img src="img/813361121_1103023302071985_108094852363762716_n.jpg" alt="Our Roblox avatars wearing matching cat tops" width="1080" height="486" loading="lazy"><span aria-hidden="true">↗</span></button>
+                <div class="memory-copy">
+                  <h3>Us, in every world</h3>
+                  <p>Every new day keeps proving I want to keep making memories with you.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="story section" id="story">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">02 / HOW IT FEELS</p>
+              <h2>It was always <em>you.</em></h2>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">Roblox nights</div>
+                <div class="timeline-card">
+                  <h3>Fun and laughter</h3>
+                  <p>
+                    We would spend hours playing Roblox and laughing through all the chaos,
+                    and somehow those simple moments became some of my favorite memories with you.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">Valorant</div>
+                <div class="timeline-card">
+                  <h3>Always a blast</h3>
+                  <p>
+                    Even the short time we spent in Valorant felt full of energy and joy. Watching
+                    you play, hearing you laugh, and being with you in those moments made everything feel easier.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">You</div>
+                <div class="timeline-card">
+                  <h3>The part that changed everything</h3>
+                  <p>
+                    The real magic was never just the games. It was the way you made the dark feel lighter,
+                    how your presence brought calm, comfort, and a kind of happiness I didn’t know I needed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="reasons section" id="reasons">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">03 / THE SWEETEST INGREDIENTS</p>
+              <h2>A few things I <em>adore.</em></h2>
+            </div>
+
+            <div class="cards-grid">
+              <article class="info-card reason-card">
+                <div class="icon">✦</div>
+                <h3>Your smile</h3>
+                <p>That smile can change my whole mood and make even the hardest days feel softer.</p>
+              </article>
+
+              <article class="info-card reason-card">
+                <div class="icon">❤</div>
+                <h3>Your heart</h3>
+                <p>You care in a way that feels deep, gentle, and honest, and I love that so much.</p>
+              </article>
+
+              <article class="info-card reason-card">
+                <div class="icon">☾</div>
+                <h3>Your presence</h3>
+                <p>Just being around you makes life feel calmer, warmer, and a lot more beautiful.</p>
+              </article>
+
+              <article class="info-card reason-card">
+                <div class="icon">✧</div>
+                <h3>Your energy</h3>
+                <p>You bring life, laughter, and comfort to the moments that matter the most.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="letter section" id="letter">
+          <div class="container letter-wrap">
+            <div class="section-heading align-left">
+              <p class="eyebrow">04 / SEALED WITH A KISS</p>
+              <h2>For u,<br><em>with all my heart.</em></h2>
+            </div>
+
+            <div class="letter-box">
+              <span class="letter-seal" aria-hidden="true">♡</span>
+              <p class="handwritten salutation">My dearest Ajwa,</p>
+              <p>
+                Ajwa, I still think about how much brighter my life feels with u in it. u are
+                the kind of person who makes ordinary days feel warm and beautiful just by being in them.
+                The hours we spent playing Roblox, the laughs during Valorant, and the way u somehow made
+                even my darker moments feel lighter will always stay with me.
+              </p>
+              <p>
+                I love how easy it feels to be with u. I love the comfort in your presence, the honesty
+                in your heart, and the way your love makes life feel softer and more meaningful. Every time
+                I think about us, I feel grateful, lucky, and a little overwhelmed by how much joy u bring.
+              </p>
+              <p>
+                u are not just someone I care about. u are someone who changed my world in a way I cant
+                fully explain. Thank u for being my comfort, my laughter, my peace, and my favorite person.
+                Happy anniversary, Ajwa. Im so lucky to have u.
+              </p>
+              <p class="handwritten signature">Yours, always.<br>Matthew ♡</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="promise section" id="promise">
+          <div class="container promise-wrap">
+            <div class="promise-copy">
+              <p class="eyebrow">05 / ALL OUR TOMORROWS</p>
+              <h2>You, me, <em>and every tomorrow.</em></h2>
+              <p>
+                Through every season, every ordinary day, and every dream we build together, I promise to
+                keep loving you with patience, joy, and a heart that keeps growing because of you.
+              </p>
+            </div>
+
+            <div class="countdown-card">
+              <p class="countdown-label">Until our next 31st ♡</p>
+              <div class="countdown" id="countdown"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="playful section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">A tiny moment of joy</p>
+              <h2>There’s always room for <em>more love.</em></h2>
+            </div>
+
+            <div class="love-meter-panel">
+              <button id="loveBoost" class="love-btn" aria-label="Add love">♥</button>
+              <div class="meter-wrap">
+                <div class="meter-labels">
+                  <span>tiny love</span>
+                  <span>big love</span>
+                </div>
+                <div class="meter-stage">
+                <div class="meter" role="progressbar" aria-label="Our love" aria-valuemin="0" aria-valuemax="100" aria-valuenow="52">
+                  <div id="loveMeter" class="meter-fill"></div>
+                </div>
+                <div class="meter-pieces" aria-hidden="true"><span></span><span></span></div>
+                </div>
+                <p class="love-status" id="loveStatus" aria-live="polite">Keep tapping, my love ♡</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="finale section" id="finale">
+          <div class="container final-wrap">
+            <p class="eyebrow">ONE LAST LITTLE THING</p>
+            <button id="finalMessageBtn" class="final-message-btn" type="button" aria-expanded="false" aria-controls="finalMessage">A little P.S. for you ♡</button>
+            <div id="finalMessage" class="final-message hidden">
+              <p>
+                Ajwa, no matter how many days pass, how many months go by, or how many little moments turn into memories,
+                I’ll still choose you. Always. With all my heart, every version of me has loved you, and every version still will.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="handwritten">You’re my favorite wish come true.</p><span>AJWA &amp; MATTHEW · ALWAYS &amp; FOREVER ♡</span>
+      </footer>
+    </div>
+
+    <audio id="backgroundMusic" src="audio/our-little-melody.wav" preload="auto" loop playsinline></audio>
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="Play background music" aria-pressed="false"><span aria-hidden="true">♫</span> <span id="musicLabel">Music off</span></button>
+    <dialog id="memoryDialog" class="memory-dialog" aria-label="Our memory">
+      <button id="closeMemory" class="close-memory" type="button" aria-label="Close photo">×</button>
+      <img id="memoryFullImage" alt="">
+      <p id="memoryCaption" class="handwritten"></p>
+    </dialog>
+    <div id="floating-hearts" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
