@@ -81,6 +81,7 @@ cupcakeButton.addEventListener('click', () => {
   }
   setTimeout(() => {
     document.body.classList.remove('wish-pending');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.querySelector('.page-shell').inert = false;
     cupcakeScreen.classList.add('revealing');
     typewriterElement.focus({ preventScroll: true });
@@ -165,6 +166,13 @@ updateDaysSinceStart();
 const lovePanel = document.querySelector('.love-meter-panel');
 const loveStatus = document.getElementById('loveStatus');
 const meterTrack = document.querySelector('.meter');
+const loveKitty = document.getElementById('loveKitty');
+const kittyReaction = document.getElementById('kittyReaction');
+// Preload reaction stickers so a fast tapping spree never shows an empty image.
+['296902-catevil.png', '278650-catexcited.png'].forEach((file) => {
+  const sticker = new Image();
+  sticker.src = `cute-gifs/${file}`;
+});
 let loveBroken = false;
 let lastLoveBurst = 0;
 loveBoost.addEventListener('click', () => {
@@ -174,10 +182,15 @@ loveBoost.addEventListener('click', () => {
     meterTrack.setAttribute('aria-valuenow', String(Math.min(loveLevel, 100)));
     if (loveLevel >= 100) {
       lovePanel.classList.add('love-overloading');
+      loveKitty.src = 'cute-gifs/296902-catevil.png';
+      kittyReaction.textContent = 'hehe... keep going';
       loveStatus.textContent = '100%... wait, theres more? ♡';
     }
     if (loveLevel >= 132) {
       loveBroken = true;
+      loveKitty.src = 'cute-gifs/278650-catexcited.png';
+      loveKitty.classList.add('kitty-celebrating');
+      kittyReaction.textContent = 'I KNEW IT!! ♡';
       lovePanel.classList.remove('love-overloading');
       lovePanel.classList.add('love-broken');
       loveStatus.innerHTML = '<strong>???</strong><span>oops... our love broke the meter ♡<br>too much love to fit in here</span>';
