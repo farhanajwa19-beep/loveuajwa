@@ -4,3 +4,18 @@ node_modules/
 __pycache__/
 *.log
 .playwright-check.cjs
+# Never commit local credentials, personal backups, or authentication material.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.zip
+*.bak
+.ssh/
+.aws/
+.codex/
+.agents/

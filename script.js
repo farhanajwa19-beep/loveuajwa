@@ -192,7 +192,11 @@ loveBoost.addEventListener('click', () => {
       kittyReaction.textContent = 'I KNEW IT!! ♡';
       lovePanel.classList.remove('love-overloading');
       lovePanel.classList.add('love-broken');
-      loveStatus.innerHTML = '<strong>???</strong><span>oops... our love broke the meter ♡<br>too much love to fit in here</span>';
+      const overflowTitle = document.createElement('strong');
+      overflowTitle.textContent = '???';
+      const overflowNote = document.createElement('span');
+      overflowNote.append('oops... our love broke the meter ♡', document.createElement('br'), 'too much love to fit in here');
+      loveStatus.replaceChildren(overflowTitle, overflowNote);
       meterTrack.setAttribute('aria-valuetext', 'Beyond measure. Our love broke the meter!');
     }
   }
@@ -229,12 +233,15 @@ function updateCountdown() {
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
-  countdownNode.innerHTML = `
-    <div class="countdown-item"><strong>${days}</strong>Days</div>
-    <div class="countdown-item"><strong>${hours}</strong>Hours</div>
-    <div class="countdown-item"><strong>${minutes}</strong>Min</div>
-    <div class="countdown-item"><strong>${seconds}</strong>Sec</div>
-  `;
+  const units = [[days, 'Days'], [hours, 'Hours'], [minutes, 'Min'], [seconds, 'Sec']];
+  countdownNode.replaceChildren(...units.map(([value, label]) => {
+    const item = document.createElement('div');
+    item.className = 'countdown-item';
+    const number = document.createElement('strong');
+    number.textContent = String(value);
+    item.append(number, label);
+    return item;
+  }));
 }
 
 updateCountdown();
@@ -349,10 +356,10 @@ let secretPreviousOverflow = '';
 let foundSecrets = new Set();
 try {
   const saved = JSON.parse(localStorage.getItem('ajwa-secret-memories') || '[]');
-  if (Array.isArray(saved)) foundSecrets = new Set(saved.filter(key => Object.hasOwn(secretMemories, key)));
+  if (Array.isArray(saved)) foundSecrets = new Set(saved.filter(key => typeof key === 'string' && Object.hasOwn(secretMemories, key)));
 } catch { /* Keepsakes still work when browser storage is unavailable. */ }
 function showSecret(key, trigger) {
-  if (secretDialog.open) return;
+  if (secretDialog.open || !Object.hasOwn(secretMemories, key)) return;
   const memory = secretMemories[key];
   document.getElementById('secretPhoto').src = memory.photo;
   document.getElementById('secretPhoto').alt = memory.alt;

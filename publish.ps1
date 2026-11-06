@@ -3,7 +3,11 @@ $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
 python tools/build_album.py
 if ($LASTEXITCODE -ne 0) { throw 'Album generation failed.' }
-git add -- index.html styles.css script.js anniversary.js album.html album.js img cute-gifs audio tools publish.ps1 README.md .gitignore .nojekyll
+python tools/secure_pages.py
+if ($LASTEXITCODE -ne 0) { throw 'Security policy generation failed.' }
+python tools/check_site.py
+if ($LASTEXITCODE -ne 0) { throw 'Website checks failed; nothing was published.' }
+git add -- index.html styles.css script.js anniversary.js album.html album.js img cute-gifs audio tools publish.ps1 README.md .gitignore .gitattributes .nojekyll
 if ($LASTEXITCODE -ne 0) { throw 'Could not stage the website.' }
 git diff --cached --quiet
 if ($LASTEXITCODE -eq 1) {
