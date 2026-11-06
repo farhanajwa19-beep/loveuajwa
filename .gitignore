@@ -1,0 +1,6 @@
+.github-sync/
+node_modules/
+.playwright/
+__pycache__/
+*.log
+.playwright-check.cjs
